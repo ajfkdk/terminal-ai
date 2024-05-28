@@ -98,7 +98,9 @@ def sshchain(c: str):
         typer.echo("[E]xecute, [D]escribe, [A]bort: ", nl=False)
         choice = typer.prompt("").lower()
         if choice == 'e':
-            subprocess.run(result, shell=True)
+            env = os.environ.copy()
+            env['PATH'] = '/usr/bin:/bin:/usr/sbin:/sbin:' + env['PATH']
+            subprocess.run(result, shell=True, env=env)
         elif choice == 'd':
             prompt = "请详细解释一下这个命令的作用：" + result
             typer.echo(ExplainChain(prompt))
