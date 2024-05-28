@@ -2,6 +2,8 @@
 
 This project is a terminal-based command assistant that leverages GPT-4o to help you with your command-line needs. You can interact with it in two modes: explanation mode and command generation mode.
 
+![guide.gif](guide.gif)
+
 ## Features
 
 - **Explanation Mode**: Input your requirement prefixed with `#demand`, press `Enter`, and then `Ctrl+W` to receive an explanation from GPT-4o in a conversational format.
