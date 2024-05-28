@@ -95,13 +95,14 @@ def sshchain(c: str):
     if c.startswith('#'):
         result = SSHChain(c[1:])  # 去掉开头的 '#'
         typer.echo(result)
-        typer.echo("[E]xecute, [D]escribe, [A]bort: ", nl=False)
+        # typer.echo("[E]xecute, [D]escribe, [A]bort: ", nl=False)
+        typer.echo("[D]escribe, [A]bort: ", nl=False)
         choice = typer.prompt("").lower()
-        if choice == 'e':
-            env = os.environ.copy()
-            env['PATH'] = '/usr/bin:/bin:/usr/sbin:/sbin:' + env['PATH']
-            subprocess.run(result, shell=True, env=env)
-        elif choice == 'd':
+        # if choice == 'e': 项目的技术架构在Docker运行python脚本，虽然可以让系统不断监听Docker容器向外暴露的文件，从而让Docker宿主机执行命令，但是不推荐这样做。
+        #     env = os.environ.copy()
+        #     env['PATH'] = '/usr/bin:/bin:/usr/sbin:/sbin:' + env['PATH']
+        #     subprocess.run(result, shell=True, env=env)
+        if choice == 'd':
             prompt = "请详细解释一下这个命令的作用：" + result
             typer.echo(ExplainChain(prompt))
         elif choice == 'a':
