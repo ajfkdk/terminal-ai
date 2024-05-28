@@ -4,8 +4,8 @@ This project is a terminal-based command assistant that leverages GPT-4o to help
 
 ## Features
 
-- **Explanation Mode**: Input your requirement prefixed with `#需求`, press `Enter`, and then `Ctrl+W` to receive an explanation from GPT-4o in a conversational format.
-- **Command Generation Mode**: Input your requirement prefixed with `#需求`, press `Enter`, and then `Ctrl+G` to receive a command from GPT-4o. You will be prompted with the following options:
+- **Explanation Mode**: Input your requirement prefixed with `#demand`, press `Enter`, and then `Ctrl+W` to receive an explanation from GPT-4o in a conversational format.
+- **Command Generation Mode**: Input your requirement prefixed with `#demand`, press `Enter`, and then `Ctrl+G` to receive a command from GPT-4o. You will be prompted with the following options:
     - `[E]xecute`: Execute the generated command.
     - `[D]escribe`: Get a detailed description of what the command does.
     - `[A]bort`: Cancel the operation.
@@ -28,10 +28,10 @@ To set up the project on your local server, follow these steps:
 
 3. **Set Your OpenAI API Key:**
 
-   Edit the `init.sh` file and replace `YOUR_OPEN_API_KEY` with your actual OpenAI API key or set it as an environment variable:
+   Run the `init.sh` file and input `YOUR_OPEN_API_KEY` with your actual OpenAI API key 
 
     ```bash
-    export OPEN_API_KEY="YOUR_OPEN_API_KEY"
+    chmod 777 init.sh
     ```
 
 4. **Run the Initialization Script:**
@@ -62,7 +62,7 @@ Here is a simple example to illustrate the usage:
 1. **Requirement Input:**
 
     ```bash
-    #需求 列出当前目录下所有的文件
+    #Lists all the files in the current directory
     ```
 
 2. **Explanation Mode:**
@@ -82,9 +82,6 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-For any questions or inquiries, please contact [your-email@example.com].
 
 ---
 
