@@ -1,4 +1,6 @@
 import os
+import subprocess
+
 import typer
 
 from langchain_core.output_parsers import StrOutputParser
